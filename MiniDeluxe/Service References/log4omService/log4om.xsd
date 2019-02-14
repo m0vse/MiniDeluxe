@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http//Log4OMNG/BE" elementFormDefault="qualified" targetNamespace="http//Log4OMNG/BE" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:8080/log4om?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/LogOM.BE" />
+  <xs:complexType name="Log">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QSO" nillable="true" type="tns:QSO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Log" nillable="true" type="tns:Log" />
+  <xs:complexType name="QSO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AIndex" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/LogOM.BE" minOccurs="0" name="Action" type="q1:QsoAction" />
+      <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AntAz" type="xs:int" />
+      <xs:element minOccurs="0" name="AntEl" type="xs:int" />
+      <xs:element minOccurs="0" name="AntPath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrlCheck" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ArrlSect" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AwardGranted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AwardSubmitted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Band" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BandRx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Call" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CallsignUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClubLogQsoUploadDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ClubLogQsoUploadStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cnty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cont" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ContactedOp" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Contest" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContestId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Cqz" type="xs:int" />
+      <xs:element minOccurs="0" name="CreditGranted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CreditSubmitted" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Dirty" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Distance" type="xs:int" />
+      <xs:element minOccurs="0" name="Dxcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqCall" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqslQslRcvd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqslQslSent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqslQslrdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqslQslsdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EqslUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ErrorMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Fists" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FistsCc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ForceInit" type="xs:int" />
+      <xs:element minOccurs="0" name="Freq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FreqRx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Gridsquare" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HomepageUrl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HrdlogQsoUploadDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HrdlogQsoUploadStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Iota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IotaIslandId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IsError" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Ituz" type="xs:int" />
+      <xs:element minOccurs="0" name="KIndex" type="xs:int" />
+      <xs:element minOccurs="0" name="Lat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Lon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotwQslRcvd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotwQslSent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotwQslrdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotwQslsdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LotwUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ManualDateTime" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxBursts" type="xs:int" />
+      <xs:element minOccurs="0" name="Mobile" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Mode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MsShower" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyAntenna" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCity" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCnty" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCountry" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyCqZone" type="xs:int" />
+      <xs:element minOccurs="0" name="MyFists" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyGridsquare" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyIota" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyIotaIslandId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyItuZone" type="xs:int" />
+      <xs:element minOccurs="0" name="MyLat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyLon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyPostalCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyRig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySigInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MySotaRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyState" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyStreet" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyUsacaCounties" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MyVuccGrids" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NrBursts" type="xs:int" />
+      <xs:element minOccurs="0" name="NrPings" type="xs:int" />
+      <xs:element minOccurs="0" name="OwnerCallsign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Pfx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Portable" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Precedence" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programid" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Programversion" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PropMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PublicKey" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qrp" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QrzcomQsoUploadDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QrzcomQsoUploadStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QslRcvd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QslRcvdVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QslSent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QslSentVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QslUser" type="xs:boolean" />
+      <xs:element minOccurs="0" name="QslVia" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qslmsg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qslrdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qslsdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QsoAwards" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QsoComplete" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QsoDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QsoDateOff" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QsoId" type="xs:long" />
+      <xs:element minOccurs="0" name="QsoRandom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Qth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Rig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RstRcvd" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RstSent" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RxPwrDecimal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="SatMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SatName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sfi" type="xs:int" />
+      <xs:element minOccurs="0" name="Sig" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SigInfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Skcc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SotaRef" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Srx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SrxString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StationCallsign" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Stx" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="StxString" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubMode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="SubmissionStatus" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Swl" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenTen" type="xs:int" />
+      <xs:element minOccurs="0" name="TheClass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TheOperator" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeOff" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TimeOn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TxPwrDecimal" type="xs:decimal" />
+      <xs:element minOccurs="0" name="UsacaCounties" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValidatedCallsign" type="xs:boolean" />
+      <xs:element minOccurs="0" name="VuccGrids" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QSO" nillable="true" type="tns:QSO" />
+</xs:schema>

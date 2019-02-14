@@ -33,7 +33,52 @@
       <Value Profile="(Default)">1234</Value>
     </Setting>
     <Setting Name="SSDR" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="RadioPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">12060</Value>
+    </Setting>
+    <Setting Name="RIOX" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PSDR" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="N1MM" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="LogPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">7825</Value>
+    </Setting>
+    <Setting Name="Log4OM" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="Log4OMService" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://localhost:8080/log4om</Value>
+    </Setting>
+    <Setting Name="QRZcom" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="QRZUsername" Type="System.String" Scope="User">
+      <Value Profile="(Default)">callsign</Value>
+    </Setting>
+    <Setting Name="QRZPassword" Type="System.String" Scope="User">
+      <Value Profile="(Default)">password</Value>
+    </Setting>
+    <Setting Name="QRZdburl" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://xmldata.qrz.com/xml/current/</Value>
+    </Setting>
+    <Setting Name="Log4OMDBServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="Log4OMDBName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">log4om_callsign</Value>
+    </Setting>
+    <Setting Name="Log4OMDBUser" Type="System.String" Scope="User">
+      <Value Profile="(Default)">root</Value>
+    </Setting>
+    <Setting Name="Log4OMDBPass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">log4om_password</Value>
     </Setting>
   </Settings>
 </SettingsFile>

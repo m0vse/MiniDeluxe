@@ -26,6 +26,7 @@ namespace MiniDeluxe
     class HRDTCPServer
     {
         public bool IsListening { get; private set; }
+        public bool isLogbook { get; set; }
 
         public event HRDTCPEventHandler HRDTCPEvent;
 
@@ -37,12 +38,11 @@ namespace MiniDeluxe
 
         private readonly TcpListener _listener;
 
-        public HRDTCPServer(MiniDeluxe parent)
+        public HRDTCPServer(MiniDeluxe parent,int port)
         {
             _parent = parent;
             _connectionCount = 0;
-            _listener = new TcpListener(Properties.Settings.Default.LocalOnly ? IPAddress.Loopback : IPAddress.Any,
-                                            Properties.Settings.Default.Port);
+            _listener = new TcpListener(Properties.Settings.Default.LocalOnly ? IPAddress.Loopback : IPAddress.Any, port);
         }
 
         public void Start()
@@ -122,30 +122,46 @@ namespace MiniDeluxe
     }
     
     public static class HRDMessage
-    {        
-        public static byte[] HRDMessageToByteArray(String szText)
-        {            
+    {
+        public static byte[] HRDMessageToByteArray(String szText,bool logBook=false)
+        {
             // create HRD message
+
+
             HRDMessageBlock msg = new HRDMessageBlock
-              {
-                  nChecksum = 0,
-                  nSanity1 = 0x1234ABCD,
-                  nSanity2 = 0xABCD1234,
-                  szText = Encoding.Unicode.GetBytes(szText + "\0"),
-                  nSize = (uint)Encoding.Unicode.GetByteCount(szText + "\0") + (sizeof(uint) * 4)                      
+            {
+                nChecksum = 0,
+
+                nSanity1 = 0x1234ABCD,
+                nSanity2 = 0xABCD1234,
+
+                szText = Encoding.Unicode.GetBytes(szText + "\0"),
+                nSize = (uint)Encoding.Unicode.GetByteCount(szText + "\0") + (sizeof(uint) * 4)
+    
               };
 
+            if (logBook)
+            {
+                msg.nSanity1 = 0xc0defeed;
+                msg.nSanity2 = 0xdeefed0c;
+            }
 #if DEBUG
-            //MiniDeluxe.Debug(String.Format("TX: {0}", szText));
+//            MiniDeluxe.Debug("TX Header:" + msg.nSize.ToString("x8") + ":" + msg.nSanity1.ToString("x8") + ":" + msg.nSanity2.ToString("x8") + ":" + msg.nChecksum.ToString("x8"));
+//                        MiniDeluxe.Debug(String.Format("TX:{0}", szText));
 #endif
-            // Serialize it
+
+
             int len = (int)msg.nSize;
             byte[] buf = new byte[len];
             Array.Copy(BitConverter.GetBytes(msg.nSize), 0, buf, 0, 4);
             Array.Copy(BitConverter.GetBytes(msg.nSanity1), 0, buf, 4, 4);
             Array.Copy(BitConverter.GetBytes(msg.nSanity2), 0, buf, 8, 4);
-            Array.Copy(BitConverter.GetBytes(msg.nChecksum), 0, buf, 12, 4);
+            Array.Copy(BitConverter.GetBytes(msg.nChecksum), 0, buf, 12, 4); 
+
+
+
             Array.Copy(msg.szText, 0, buf, 16, msg.szText.Length);
+
             return buf;
         }
 
@@ -160,6 +176,7 @@ namespace MiniDeluxe
                 msg.nSanity2 = br.ReadUInt32();
                 msg.nChecksum = br.ReadUInt32();
                 msg.szText = br.ReadBytes((int)msg.nSize - (sizeof(UInt32) * 4));
+//                MiniDeluxe.Debug("RX Header:" + msg.nSize.ToString("x8") + ":" + msg.nSanity1.ToString("x8") + ":" + msg.nSanity2.ToString("x8") + ":" + msg.nChecksum.ToString("x8"));
                 return msg;
             }
             catch
