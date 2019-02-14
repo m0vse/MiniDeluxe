@@ -344,5 +344,10 @@ namespace MiniDeluxe
         {
 
         }
+
+        private void log4omDBName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

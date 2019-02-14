@@ -83,6 +83,14 @@
             this.Log4OM = new System.Windows.Forms.TabPage();
             this.cbLog4OM = new System.Windows.Forms.CheckBox();
             this.gbLog4OM = new System.Windows.Forms.GroupBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.log4omDBPass = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.log4omDBUser = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.log4omDBName = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.log4omDBServer = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.log4omService = new System.Windows.Forms.TextBox();
             this.QRZcom = new System.Windows.Forms.TabPage();
@@ -95,14 +103,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.QRZdburl = new System.Windows.Forms.TextBox();
             this.SaveClose = new System.Windows.Forms.Button();
-            this.label19 = new System.Windows.Forms.Label();
-            this.log4omDBServer = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.log4omDBName = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.log4omDBPass = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.log4omDBUser = new System.Windows.Forms.TextBox();
             this.Tabs.SuspendLayout();
             this.HRDPage.SuspendLayout();
             this.PowerSDRPage.SuspendLayout();
@@ -689,6 +689,74 @@
             this.gbLog4OM.TabIndex = 21;
             this.gbLog4OM.TabStop = false;
             // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(199, 100);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(46, 13);
+            this.label21.TabIndex = 24;
+            this.label21.Text = "DB Pwd";
+            // 
+            // log4omDBPass
+            // 
+            this.log4omDBPass.Location = new System.Drawing.Point(258, 97);
+            this.log4omDBPass.Name = "log4omDBPass";
+            this.log4omDBPass.Size = new System.Drawing.Size(103, 20);
+            this.log4omDBPass.TabIndex = 25;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(26, 100);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(47, 13);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "DB User";
+            // 
+            // log4omDBUser
+            // 
+            this.log4omDBUser.Location = new System.Drawing.Point(88, 97);
+            this.log4omDBUser.Name = "log4omDBUser";
+            this.log4omDBUser.Size = new System.Drawing.Size(95, 20);
+            this.log4omDBUser.TabIndex = 23;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(199, 71);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 13);
+            this.label20.TabIndex = 20;
+            this.label20.Text = "DB Name";
+            // 
+            // log4omDBName
+            // 
+            this.log4omDBName.Location = new System.Drawing.Point(258, 68);
+            this.log4omDBName.Name = "log4omDBName";
+            this.log4omDBName.Size = new System.Drawing.Size(103, 20);
+            this.log4omDBName.TabIndex = 21;
+            this.log4omDBName.TextChanged += new System.EventHandler(this.log4omDBName_TextChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(26, 71);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 13);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "DB Server";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // log4omDBServer
+            // 
+            this.log4omDBServer.Location = new System.Drawing.Point(88, 68);
+            this.log4omDBServer.Name = "log4omDBServer";
+            this.log4omDBServer.Size = new System.Drawing.Size(95, 20);
+            this.log4omDBServer.TabIndex = 19;
+            this.log4omDBServer.Text = "localhost";
+            this.log4omDBServer.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
+            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -804,76 +872,6 @@
             this.SaveClose.Text = "Save and Close";
             this.SaveClose.UseVisualStyleBackColor = true;
             this.SaveClose.Click += new System.EventHandler(this.SaveClose_Click);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(26, 71);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(56, 13);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "DB Server";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
-            // log4omDBServer
-            // 
-            this.log4omDBServer.Location = new System.Drawing.Point(88, 68);
-            this.log4omDBServer.Name = "log4omDBServer";
-            this.log4omDBServer.Size = new System.Drawing.Size(95, 20);
-            this.log4omDBServer.TabIndex = 19;
-            this.log4omDBServer.Text = "localhost";
-            this.log4omDBServer.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(199, 71);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(53, 13);
-            this.label20.TabIndex = 20;
-            this.label20.Text = "DB Name";
-            // 
-            // log4omDBName
-            // 
-            this.log4omDBName.Location = new System.Drawing.Point(258, 68);
-            this.log4omDBName.Name = "log4omDBName";
-            this.log4omDBName.Size = new System.Drawing.Size(103, 20);
-            this.log4omDBName.TabIndex = 21;
-            this.log4omDBName.Text = "log4om_m0vse";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(199, 100);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(46, 13);
-            this.label21.TabIndex = 24;
-            this.label21.Text = "DB Pwd";
-            // 
-            // log4omDBPass
-            // 
-            this.log4omDBPass.Location = new System.Drawing.Point(258, 97);
-            this.log4omDBPass.Name = "log4omDBPass";
-            this.log4omDBPass.Size = new System.Drawing.Size(103, 20);
-            this.log4omDBPass.TabIndex = 25;
-            this.log4omDBPass.Text = "Belmont";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(26, 100);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(47, 13);
-            this.label22.TabIndex = 22;
-            this.label22.Text = "DB User";
-            // 
-            // log4omDBUser
-            // 
-            this.log4omDBUser.Location = new System.Drawing.Point(88, 97);
-            this.log4omDBUser.Name = "log4omDBUser";
-            this.log4omDBUser.Size = new System.Drawing.Size(95, 20);
-            this.log4omDBUser.TabIndex = 23;
-            this.log4omDBUser.Text = "root";
             // 
             // MiniDeluxeForm
             // 
