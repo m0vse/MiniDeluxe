@@ -736,7 +736,6 @@
             this.log4omDBName.Name = "log4omDBName";
             this.log4omDBName.Size = new System.Drawing.Size(103, 20);
             this.log4omDBName.TabIndex = 21;
-            this.log4omDBName.TextChanged += new System.EventHandler(this.log4omDBName_TextChanged);
             // 
             // label19
             // 
@@ -746,7 +745,6 @@
             this.label19.Size = new System.Drawing.Size(56, 13);
             this.label19.TabIndex = 18;
             this.label19.Text = "DB Server";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
             // 
             // log4omDBServer
             // 
@@ -755,7 +753,6 @@
             this.log4omDBServer.Size = new System.Drawing.Size(95, 20);
             this.log4omDBServer.TabIndex = 19;
             this.log4omDBServer.Text = "localhost";
-            this.log4omDBServer.TextChanged += new System.EventHandler(this.textBox1_TextChanged_3);
             // 
             // label15
             // 

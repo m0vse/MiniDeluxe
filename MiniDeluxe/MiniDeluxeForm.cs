@@ -335,19 +335,5 @@ namespace MiniDeluxe
 
         }
 
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_3(object sender, EventArgs e)
-        {
-
-        }
-
-        private void log4omDBName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
